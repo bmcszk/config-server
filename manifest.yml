@@ -1,0 +1,11 @@
+applications:
+  - name: config-server
+    memory: 1G
+    instances: 1
+    random-route: true
+    buildpacks:
+      - java_buildpack
+    path: target/config-server-0.0.1-SNAPSHOT.jar
+    env:
+      CONFIG_SERVER_PROFILE: git
+      CONFIG_SERVER_GIT_REPO: https://github.com/dzikun/hotel-reservation-config.git
